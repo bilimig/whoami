@@ -1,0 +1,352 @@
+/* ── Kamil Owczarek — dark / dev terminal ── */
+
+:root {
+  --bg: #0b0f14;
+  --bg-panel: #10161e;
+  --bg-panel-2: #141c26;
+  --border: #223042;
+  --text: #d7e0ea;
+  --text-dim: #6b7a8c;
+  --accent: #3ddc97;
+  --accent-2: #59a8ff;
+  --red: #ff5f56;
+  --yellow: #ffbd2e;
+  --green: #27c93f;
+  --mono: "JetBrains Mono", Consolas, monospace;
+  --sans: "IBM Plex Sans", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  /* siatka jak w edytorze / blueprint */
+  background-image:
+    linear-gradient(#16202b66 1px, transparent 1px),
+    linear-gradient(90deg, #16202b66 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.dim { color: var(--text-dim); }
+
+/* ── Przełącznik języka ── */
+body:not(.lang-en) .en { display: none !important; }
+body.lang-en .pl { display: none !important; }
+
+#lang-toggle {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15rem 0.6rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+#lang-toggle:hover { border-color: var(--accent); background: #3ddc9710; }
+.token-kw { color: var(--accent-2); }
+.token-str { color: var(--accent); }
+
+/* ── Topbar ── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem clamp(1.2rem, 5vw, 4rem);
+  background: #0b0f14e6;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.prompt { color: var(--accent); }
+
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.topbar nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.topbar nav a { color: var(--text); }
+.topbar nav a:hover { color: var(--accent); text-decoration: none; }
+
+/* ── Hero ── */
+.hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(4rem, 12vh, 8rem) clamp(1.2rem, 5vw, 4rem) 4rem;
+}
+
+.hero-cmd {
+  font-family: var(--mono);
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  animation: rise 0.6s ease both;
+}
+
+.hero h1 {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 5.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  animation: rise 0.6s 0.1s ease both;
+}
+
+.hero-role {
+  font-family: var(--mono);
+  font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+  margin-top: 1rem;
+  animation: rise 0.6s 0.2s ease both;
+}
+
+.lead {
+  max-width: 40rem;
+  margin-top: 1.6rem;
+  color: #a9b6c4;
+  font-size: 1.08rem;
+  animation: rise 0.6s 0.3s ease both;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.6rem;
+  margin-top: 2rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  animation: rise 0.6s 0.4s ease both;
+}
+
+.hero-links a { color: var(--text); border-bottom: 1px solid var(--accent); }
+.hero-links a:hover { color: var(--accent); text-decoration: none; }
+.loc { color: var(--text-dim); }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Sekcje ── */
+.block {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem clamp(1.2rem, 5vw, 4rem);
+}
+
+.block h2, footer h2 {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+}
+
+.block-body { max-width: 42rem; color: #a9b6c4; }
+
+.langs {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+/* ── Okna edytora ── */
+.window {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.window:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+.window + .window { margin-top: 1.5rem; }
+
+.window-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  background: var(--bg-panel-2);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.dot { width: 11px; height: 11px; border-radius: 50%; }
+.dot.red { background: var(--red); }
+.dot.yellow { background: var(--yellow); }
+.dot.green { background: var(--green); }
+
+.window-title { margin-left: 0.6rem; }
+.window-dates { margin-left: auto; }
+
+.window-body { padding: 1.4rem 1.6rem; }
+
+.window-body h3 {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.window-body p { color: #a9b6c4; }
+
+.bullets {
+  list-style: none;
+  color: #a9b6c4;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.bullets li { padding-left: 1.3rem; position: relative; }
+.bullets li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+}
+
+/* ── Tagi ── */
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.tags li {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15rem 0.6rem;
+  color: var(--accent);
+  background: #3ddc9710;
+}
+
+.repo-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+/* ── Grid projektów ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.grid .window + .window { margin-top: 0; }
+
+/* ── Umiejętności ── */
+.skills {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.4rem 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  display: grid;
+  gap: 0.8rem;
+  overflow-x: auto;
+}
+
+.skill-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.skill-key { color: var(--accent-2); min-width: 7.5rem; }
+.skill-val { color: var(--text); }
+
+/* ── Edukacja ── */
+.edu h3 {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 0.9rem;
+}
+
+.edu-item {
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: #a9b6c4;
+}
+
+.thesis {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-dim);
+}
+.thesis .dim { font-style: normal; font-family: var(--mono); font-size: 0.78rem; }
+
+.dates { font-family: var(--mono); font-size: 0.8rem; color: var(--text-dim); }
+
+/* ── Stopka ── */
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem clamp(1.2rem, 5vw, 4rem) 2.5rem;
+}
+
+.big-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: clamp(1.05rem, 3vw, 1.6rem);
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+}
+.big-link:hover { color: var(--accent); text-decoration: none; }
+
+.foot-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+/* ── Mobile ── */
+@media (max-width: 720px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  .window-dates { margin-left: 0.6rem; }
+}

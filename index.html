@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamil Owczarek — Full-stack Developer</title>
+  <meta name="description" content="Kamil Owczarek — full-stack developer (Django, React). SaaS TMS, optymalizacja tras, machine learning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="prompt">kamil@dev:~$ <span class="cursor"></span></span>
+    <nav>
+      <a href="#o-mnie"><span class="pl">./o-mnie</span><span class="en">./about</span></a>
+      <a href="#doswiadczenie"><span class="pl">./doświadczenie</span><span class="en">./experience</span></a>
+      <a href="#projekty"><span class="pl">./projekty</span><span class="en">./projects</span></a>
+      <a href="#kontakt"><span class="pl">./kontakt</span><span class="en">./contact</span></a>
+      <button id="lang-toggle" type="button" aria-label="Switch language">EN</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-cmd"><span class="dim">$</span> whoami</p>
+      <h1>Kamil Owczarek</h1>
+      <p class="hero-role"><span class="token-kw">const</span> role = <span class="token-str">"Full-stack Developer"</span>; <span class="dim">// Django · React · ML</span></p>
+      <p class="lead pl">
+        Full-stack developer budujący produkcyjny SaaS — Transport Management
+        System w Django i React. Magister informatyki, specjalizacja:
+        machine learning i optymalizacja. Swobodnie poruszam się
+        po całym stacku: REST API, PostgreSQL, testy automatyczne, Docker i CI/CD.
+      </p>
+      <p class="lead en">
+        Full-stack developer building a production SaaS Transport Management
+        System with Django and React. Computer Science MSc focused on
+        machine learning and optimization. Comfortable across the stack —
+        REST APIs, PostgreSQL, automated testing, and Dockerized CI/CD workflows.
+      </p>
+      <div class="hero-links">
+        <a href="mailto:kontakt.owczarek@gmail.com">kontakt.owczarek@gmail.com</a>
+        <a href="tel:+48577110889">+48 577 110 889</a>
+        <a href="https://github.com/bilimig" target="_blank" rel="noopener">github</a>
+        <a href="https://www.linkedin.com/in/kamil-owczarek-8a150227a/" target="_blank" rel="noopener">linkedin</a>
+        <span class="loc">📍 Wrocław</span>
+      </div>
+    </section>
+
+    <!-- O MNIE -->
+    <section id="o-mnie" class="block">
+      <h2><span class="dim">01</span> <span class="pl">// o mnie</span><span class="en">// about me</span></h2>
+      <div class="block-body">
+        <p class="pl">
+          Na co dzień projektuję i rozwijam SaaS-owy system TMS w
+          <a href="https://optimologic.com/" target="_blank" rel="noopener">Optimologic</a> —
+          od backendu w Django REST Framework, przez algorytm optymalizacji tras (VRP),
+          po frontend w React. Interesuje mnie styk inżynierii oprogramowania
+          z machine learningiem i optymalizacją.
+        </p>
+        <p class="en">
+          I design and develop a SaaS TMS at
+          <a href="https://optimologic.com/" target="_blank" rel="noopener">Optimologic</a> —
+          from the Django REST Framework backend, through a vehicle route
+          optimization (VRP) algorithm, to the React frontend. I'm interested in
+          the intersection of software engineering, machine learning and optimization.
+        </p>
+        <ul class="langs">
+          <li class="pl"><span class="token-kw">polski</span> — ojczysty</li>
+          <li class="pl"><span class="token-kw">angielski</span> — średniozaawansowany</li>
+          <li class="en"><span class="token-kw">polish</span> — native</li>
+          <li class="en"><span class="token-kw">english</span> — intermediate</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DOŚWIADCZENIE -->
+    <section id="doswiadczenie" class="block">
+      <h2><span class="dim">02</span> <span class="pl">// doświadczenie</span><span class="en">// experience</span></h2>
+
+      <article class="window">
+        <div class="window-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="window-title">optimologic — fullstack</span>
+          <span class="window-dates"><span class="pl">08.2024 — obecnie</span><span class="en">08.2024 — present</span></span>
+        </div>
+        <div class="window-body">
+          <h3>SaaS Transport Management System (TMS) · <a href="https://optimologic.com/" target="_blank" rel="noopener">optimologic.com</a></h3>
+          <ul class="bullets pl">
+            <li>Projektowanie i budowa REST API (Django REST Framework + PostgreSQL) obsługujących planowanie tras, dyspozycję i obieg przesyłek.</li>
+            <li>Implementacja algorytmu optymalizacji tras pojazdów (VRP).</li>
+            <li>Parser dokumentów oparty o LLM (Claude Haiku) — ekstrakcja ustrukturyzowanych danych z potwierdzeń stawek frachtowych do JSON, z fuzzy matchingiem przewoźników i klientów; automatyzacja ręcznego wprowadzania ~150 zleceń dziennie.</li>
+            <li>Integracja platformy z systemami zewnętrznymi, m.in. QuickBooks (synchronizacja faktur i księgowości).</li>
+            <li>Funkcje frontendowe w React + Django signals utrzymujące spójność zleceń i przesyłek.</li>
+            <li>Utrzymanie pokrycia testami (PyTest) w zdockeryzowanym pipeline GitLab CI/CD.</li>
+          </ul>
+          <ul class="bullets en">
+            <li>Designed and built REST APIs on a Django REST Framework backend (PostgreSQL) powering trip planning, dispatching and shipment workflows.</li>
+            <li>Implemented a vehicle route optimization (VRP) algorithm.</li>
+            <li>Built an LLM-based document parser (Claude Haiku) extracting structured data from freight rate confirmations into JSON, with fuzzy matching to resolve carriers/customers — automating manual data entry for ~150 orders/day.</li>
+            <li>Integrated the platform with external systems including QuickBooks for invoicing/accounting sync.</li>
+            <li>Developed React frontend features with Django signals to keep orders/shipments in sync.</li>
+            <li>Maintained test coverage with PyTest in a Dockerized GitLab CI/CD pipeline.</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li><li>Django REST Framework</li><li>PostgreSQL</li><li>React</li><li>Docker</li><li>GitLab CI/CD</li><li>PyTest</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROJEKTY -->
+    <section id="projekty" class="block">
+      <h2><span class="dim">03</span> <span class="pl">// projekty</span><span class="en">// projects</span></h2>
+      <div class="grid">
+
+        <article class="window">
+          <div class="window-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="window-title">traffic_sign_recognition.py</span>
+          </div>
+          <div class="window-body">
+            <h3>Polish Traffic Sign Recognition</h3>
+            <p class="pl">
+              Głęboka sieć neuronowa do rozpoznawania i klasyfikacji polskich znaków
+              drogowych (Python + TensorFlow). Model określa typ znaku na podstawie
+              zdjęcia, a użytkownik może wgrywać własne obrazy do klasyfikacji przez
+              prosty interfejs.
+            </p>
+            <p class="en">
+              A deep neural network for recognition and classification of Polish
+              traffic signs (Python + TensorFlow). The model determines the sign
+              type from an image, with a simple interface for users to upload
+              their own photos for classification.
+            </p>
+            <ul class="tags">
+              <li>Python</li><li>TensorFlow</li><li>Deep Learning</li>
+            </ul>
+            <a class="repo-link" href="https://github.com/bilimig/Polish_Traffic_Sign_Recognition" target="_blank" rel="noopener"><span class="pl">→ zobacz repozytorium</span><span class="en">→ view repository</span></a>
+          </div>
+        </article>
+
+        <article class="window">
+          <div class="window-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="window-title">Reasn.sln</span>
+          </div>
+          <div class="window-body">
+            <h3>Reasn</h3>
+            <p class="pl">
+              Platforma agregacji wydarzeń — organizatorzy tworzą eventy, a użytkownicy
+              je przeglądają, lajkują i komentują. Backend w .NET 8.0 z Entity Framework,
+              frontend w Next.js oraz aplikacja mobilna w React Native.
+            </p>
+            <p class="en">
+              An event aggregation platform — organizers create events, users browse,
+              like and comment on them. Backend in .NET 8.0 with Entity Framework,
+              frontend in Next.js and a React Native mobile app.
+            </p>
+            <ul class="tags">
+              <li>C#</li><li>.NET 8.0</li><li>Entity Framework</li><li>Next.js</li><li>React Native</li>
+            </ul>
+            <a class="repo-link" href="https://github.com/wzarek/Reasn" target="_blank" rel="noopener"><span class="pl">→ zobacz repozytorium</span><span class="en">→ view repository</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- UMIEJĘTNOŚCI -->
+    <section id="umiejetnosci" class="block">
+      <h2><span class="dim">04</span> <span class="pl">// umiejętności</span><span class="en">// skills</span></h2>
+      <div class="skills">
+        <div class="skill-row">
+          <span class="skill-key">languages</span>
+          <span class="skill-val">= [<span class="token-str">"Python"</span>, <span class="token-str">"C#"</span>, <span class="token-str">"SQL"</span>, <span class="token-str">"JavaScript"</span>, <span class="token-str">"HTML"</span>, <span class="token-str">"CSS"</span>]</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-key">frameworks</span>
+          <span class="skill-val">= [<span class="token-str">"Django"</span>, <span class="token-str">"FastAPI"</span>, <span class="token-str">"Flask"</span>, <span class="token-str">"React"</span>, <span class="token-str">"PyTest"</span>]</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-key">tools</span>
+          <span class="skill-val">= [<span class="token-str">"Git"</span>, <span class="token-str">"Docker"</span>, <span class="token-str">"GitLab CI/CD"</span>, <span class="token-str">"PostgreSQL"</span>, <span class="token-str">"Linux"</span>]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUKACJA -->
+    <section id="edukacja" class="block">
+      <h2><span class="dim">05</span> <span class="pl">// edukacja</span><span class="en">// education</span></h2>
+      <div class="edu">
+        <h3><span class="pl">Politechnika Wrocławska</span><span class="en">Wrocław University of Science and Technology</span></h3>
+        <div class="edu-item">
+          <div class="edu-row">
+            <span class="pl">Magisterskie — Informatyka (IT Automation)</span>
+            <span class="en">Master's in Computer Science (IT Automation)</span>
+            <span class="dates">2025 — 2026</span>
+          </div>
+          <p class="thesis pl"><span class="dim">praca dyplomowa:</span> „Analiza doboru hiperparametrów modeli uczenia maszynowego z wykorzystaniem algorytmów ewolucyjnych"</p>
+          <p class="thesis en"><span class="dim">thesis:</span> "Analysis of hyperparameter selection for machine learning models using evolutionary algorithms"</p>
+        </div>
+        <div class="edu-item">
+          <div class="edu-row">
+            <span class="pl">Inżynierskie — Informatyka (IT Automation)</span>
+            <span class="en">Bachelor's in Computer Science (IT Automation)</span>
+            <span class="dates">2021 — 2025</span>
+          </div>
+          <p class="thesis pl"><span class="dim">praca dyplomowa:</span> „Model do rozpoznawania znaków drogowych"</p>
+          <p class="thesis en"><span class="dim">thesis:</span> "A model for traffic sign recognition"</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- KONTAKT -->
+  <footer id="kontakt">
+    <h2><span class="dim">06</span> <span class="pl">// kontakt</span><span class="en">// contact</span></h2>
+    <p class="hero-cmd"><span class="dim">$</span> echo <span class="token-str pl">"porozmawiajmy"</span><span class="token-str en">"let's talk"</span></p>
+    <a class="big-link" href="mailto:kontakt.owczarek@gmail.com">kontakt.owczarek@gmail.com</a>
+    <div class="foot-meta">
+      <span>© 2026 Kamil Owczarek</span>
+      <span>kamilowczarek.dev</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('lang-toggle');
+      function apply(lang) {
+        document.body.classList.toggle('lang-en', lang === 'en');
+        document.documentElement.lang = lang;
+        btn.textContent = lang === 'en' ? 'PL' : 'EN';
+        localStorage.setItem('lang', lang);
+      }
+      btn.addEventListener('click', function () {
+        apply(document.body.classList.contains('lang-en') ? 'pl' : 'en');
+      });
+      apply(localStorage.getItem('lang') || 'pl');
+    })();
+  </script>
+
+</body>
+</html>
